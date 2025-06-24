@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "NODE_OPTIONS=--max-old-space-size=4096 vite build --logLevel verbose",
+    "prebuild": "node prebuild.js",
+    "build": "npm run prebuild && NODE_OPTIONS=--max-old-space-size=4096 vite build --logLevel=debug",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
