@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrettyMail - Unified</title>
+    <meta name="description" content="Transform your email drafts with beautiful layouts - one click to Gmail" />
+    <meta name="author" content="PrettyMail" />
+
+    <meta property="og:title" content="PrettyMail - Unified" />
+    <meta property="og:description" content="Transform your email drafts with beautiful layouts - one click to Gmail" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #666;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="loading">
+        🚀 Loading PrettyMail Unified...
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
