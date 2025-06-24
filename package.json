@@ -8,10 +8,11 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "NODE_OPTIONS=--max-old-space-size=4096 vite build --logLevel verbose",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "echo '✅ install finished' && node -e \"console.log('node',process.version)\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
