@@ -8,12 +8,10 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node prebuild.js",
-    "build": "npm run prebuild && NODE_OPTIONS=--max-old-space-size=4096 vite build --logLevel=debug",
+    "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "postinstall": "echo '✅ install finished' && node -e \"console.log('node',process.version)\""
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
