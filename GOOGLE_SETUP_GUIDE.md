@@ -3,7 +3,7 @@
 ## � **Current Status: LIVE DEPLOYMENT**
 
 ✅ PrettyMail is successfully deployed at:
-**https://prettymail-8f0w1emnb-liad-gezs-projects.vercel.app**
+**https://prettymail-7w61n9ccp-liad-gezs-projects.vercel.app**
 
 🔧 **Google Client ID configured and live!**
 
@@ -45,10 +45,10 @@ Follow these steps to enable Google OAuth integration.
 3. Application type: **Web application**
 4. Name: `PrettyMail Web Client`
 5. Authorized JavaScript origins:
-   - `https://prettymail-8f0w1emnb-liad-gezs-projects.vercel.app`
+   - `https://prettymail-7w61n9ccp-liad-gezs-projects.vercel.app`
    - `http://localhost:8080` (for development)
 6. Authorized redirect URIs:
-   - `https://prettymail-8f0w1emnb-liad-gezs-projects.vercel.app`
+   - `https://prettymail-7w61n9ccp-liad-gezs-projects.vercel.app`
    - `http://localhost:8080` (for development)
 
 ## ⚙️ **Step 2: Vercel Environment Variables**
@@ -89,4 +89,4 @@ echo "VITE_GOOGLE_CLIENT_ID=your_client_id_here" >> .env.local
 ---
 
 **✅ PrettyMail is now live and ready for Google OAuth integration!**
-**URL: https://prettymail-8f0w1emnb-liad-gezs-projects.vercel.app**
+**URL: https://prettymail-7w61n9ccp-liad-gezs-projects.vercel.app**
