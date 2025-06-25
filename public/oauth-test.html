@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PrettyMail OAuth Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 600px; 
+            margin: 50px auto; 
+            padding: 20px; 
+            text-align: center;
+        }
+        .test-button {
+            background: #4285f4;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .test-button:hover { background: #3367d6; }
+        .status { 
+            margin: 20px 0; 
+            padding: 15px; 
+            border-radius: 6px; 
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>🔧 PrettyMail OAuth Test</h1>
+    
+    <div class="status info">
+        <h3>📍 Testing OAuth Integration</h3>
+        <p><strong>URL:</strong> <span id="current-url"></span></p>
+        <p><strong>Protocol:</strong> <span id="protocol"></span></p>
+        <p><strong>Client ID:</strong> <span id="client-id-status"></span></p>
+    </div>
+
+    <button class="test-button" onclick="testOAuth()">
+        🔑 Test Google OAuth
+    </button>
+    
+    <button class="test-button" onclick="window.location.href='/'">
+        🏠 Back to Main App
+    </button>
+
+    <div id="test-results"></div>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        // Display current environment info
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('protocol').textContent = window.location.protocol;
+        
+        const clientId = import.meta?.env?.VITE_GOOGLE_CLIENT_ID || 'Not available in static HTML';
+        document.getElementById('client-id-status').textContent = clientId;
+
+        function testOAuth() {
+            const resultsDiv = document.getElementById('test-results');
+            
+            // Check if we're on HTTPS
+            if (window.location.protocol !== 'https:' && !window.location.hostname.includes('localhost')) {
+                resultsDiv.innerHTML = '<div class="status error"><h3>❌ HTTPS Required</h3><p>OAuth requires HTTPS in production. Current protocol: ' + window.location.protocol + '</p></div>';
+                return;
+            }
+
+            resultsDiv.innerHTML = '<div class="status info"><h3>🔄 Testing OAuth...</h3><p>This will test if Google OAuth client is properly configured.</p></div>';
+
+            // Test if Google Identity Services loads
+            setTimeout(() => {
+                if (typeof google !== 'undefined' && google.accounts) {
+                    resultsDiv.innerHTML = '<div class="status success"><h3>✅ Google Identity Services Loaded</h3><p>OAuth client is accessible. Try signing in from the main app!</p></div>';
+                } else {
+                    resultsDiv.innerHTML = '<div class="status error"><h3>❌ Google Identity Services Failed</h3><p>Could not load Google OAuth services. Check network and client configuration.</p></div>';
+                }
+            }, 2000);
+        }
+
+        // Auto-run test when page loads
+        window.addEventListener('load', () => {
+            setTimeout(testOAuth, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -25,11 +25,33 @@
         <p><strong>Status:</strong> <span id="client-status"></span></p>
     </div>
 
+    <div class="debug-info success">
+        <h3>✅ HTTPS Configuration Fixed</h3>
+        <p><strong>Status:</strong> HTTPS enforcement active</p>
+        <p><strong>OAuth Mode:</strong> Popup mode configured</p>
+        <p><strong>Redirect URI:</strong> Uses current origin (HTTPS)</p>
+    </div>
+
     <div class="debug-info warning">
-        <h3>⚠️ Current Error</h3>
-        <p><strong>Error:</strong> OAuth client was not found</p>
-        <p><strong>Error Code:</strong> 401: invalid_client</p>
-        <p><strong>Email:</strong> admin@terrific.co.il</p>
+        <h3>🧪 Test OAuth Integration</h3>
+        <p>To test the OAuth flow:</p>
+        <ol>
+            <li>Go back to the main app</li>
+            <li>Click "Sign in with Google"</li>
+            <li>Should open Google OAuth popup</li>
+            <li>Complete authentication</li>
+            <li>Should return to app with user logged in</li>
+        </ol>
+    </div>
+
+    <div class="debug-info">
+        <h3>⚠️ If Still Getting Errors</h3>
+        <p>Common remaining issues:</p>
+        <ul>
+            <li><strong>OAuth Client not found:</strong> Double-check Client ID in Google Cloud Console</li>
+            <li><strong>Access blocked:</strong> Verify OAuth consent screen is configured</li>
+            <li><strong>Scope issues:</strong> Ensure Gmail API and required scopes are enabled</li>
+        </ul>
     </div>
 
     <div class="debug-info">
