@@ -2,7 +2,7 @@
 
 const https = require('https');
 
-const APP_URL = 'https://prettymail-r4nq9n4pm-liad-gezs-projects.vercel.app';
+const APP_URL = 'https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app';
 
 function checkEndpoint(url) {
   return new Promise((resolve, reject) => {

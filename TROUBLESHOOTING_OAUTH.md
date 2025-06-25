@@ -43,10 +43,10 @@ After verifying the Client ID, ensure the authorized URLs are correct.
 *   Ensure the following URLs are present:
 
 *   **Authorized JavaScript Origins:**
-    *   `https://prettymail-r4nq9n4pm-liad-gezs-projects.vercel.app`
+    *   `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app`
 
 *   **Authorized Redirect URIs:**
-    *   `https://prettymail-r4nq9n4pm-liad-gezs-projects.vercel.app`
+    *   `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app`
 
 **Note:** Changes in the Google Cloud Console can take a few minutes to propagate.
 
@@ -57,7 +57,7 @@ After verifying the Client ID, ensure the authorized URLs are correct.
 Once you have completed the steps above, the `invalid_client` error should be resolved.
 
 1.  **Open a new Incognito/Private browser window.**
-2.  **Navigate to the application:** [https://prettymail-r4nq9n4pm-liad-gezs-projects.vercel.app](https://prettymail-r4nq9n4pm-liad-gezs-projects.vercel.app)
+2.  **Navigate to the application:** [https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app](https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app)
 3.  **Test the "Sign in with Google" button.**
 
 If the issue persists after following this guide, it indicates a configuration error within the Google Cloud project itself, beyond the application's control.
