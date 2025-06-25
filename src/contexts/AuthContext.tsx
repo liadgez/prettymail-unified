@@ -78,7 +78,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setIsLoading(false);
     },
     scope: 'https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
-    redirect_uri: getOAuthRedirectURI(),
     ux_mode: 'popup',
   });
 

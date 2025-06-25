@@ -45,8 +45,7 @@ After verifying the Client ID, ensure the authorized URLs are correct.
 *   **Authorized JavaScript Origins:**
     *   `https://prettymail-production.vercel.app`
 
-*   **Authorized Redirect URIs:**
-    *   `https://prettymail-production.vercel.app`
+**Note:** Since we're using popup mode for OAuth, we only need JavaScript Origins, not Redirect URIs.
 
 **Note:** Changes in the Google Cloud Console can take a few minutes to propagate.
 
