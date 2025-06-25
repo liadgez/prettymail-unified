@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PrettyMail OAuth Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .debug-info { background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .error { background: #fee; border-left: 4px solid #f00; }
+        .success { background: #efe; border-left: 4px solid #0f0; }
+        .warning { background: #fff3cd; border-left: 4px solid #ff6; }
+        code { background: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>🔧 PrettyMail OAuth Debug Info</h1>
+    
+    <div class="debug-info">
+        <h3>📍 Current URL</h3>
+        <code id="current-url"></code>
+    </div>
+
+    <div class="debug-info">
+        <h3>🔑 Environment Variables</h3>
+        <p><strong>Google Client ID:</strong> <code id="client-id"></code></p>
+        <p><strong>Status:</strong> <span id="client-status"></span></p>
+    </div>
+
+    <div class="debug-info warning">
+        <h3>⚠️ Current Error</h3>
+        <p><strong>Error:</strong> OAuth client was not found</p>
+        <p><strong>Error Code:</strong> 401: invalid_client</p>
+        <p><strong>Email:</strong> admin@terrific.co.il</p>
+    </div>
+
+    <div class="debug-info">
+        <h3>✅ Required Google Cloud Console Setup</h3>
+        <ol>
+            <li><strong>Project:</strong> Create/select a Google Cloud project</li>
+            <li><strong>APIs:</strong> Enable Gmail API, Google+ API, People API</li>
+            <li><strong>OAuth Consent Screen:</strong> Configure with app details</li>
+            <li><strong>Credentials:</strong> Create OAuth 2.0 Client ID with these URLs:</li>
+        </ol>
+        
+        <h4>🎯 Authorized JavaScript Origins:</h4>
+        <code id="js-origins"></code>
+        
+        <h4>🎯 Authorized Redirect URIs:</h4>
+        <code id="redirect-uris"></code>
+    </div>
+
+    <div class="debug-info">
+        <h3>🔗 Quick Links</h3>
+        <ul>
+            <li><a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a></li>
+            <li><a href="https://console.cloud.google.com/apis/library" target="_blank">Enable APIs</a></li>
+            <li><a href="https://console.cloud.google.com/apis/credentials" target="_blank">Create Credentials</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Display current URL
+        document.getElementById('current-url').textContent = window.location.href;
+        
+        // Display environment variables
+        const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+        document.getElementById('client-id').textContent = clientId || 'NOT SET';
+        
+        const statusEl = document.getElementById('client-status');
+        if (clientId) {
+            statusEl.innerHTML = '<span style="color: green;">✅ Set in environment</span>';
+        } else {
+            statusEl.innerHTML = '<span style="color: red;">❌ Missing from environment</span>';
+        }
+        
+        // Display URLs for Google Cloud Console
+        const baseUrl = window.location.origin;
+        document.getElementById('js-origins').textContent = baseUrl;
+        document.getElementById('redirect-uris').textContent = baseUrl;
+    </script>
+</body>
+</html>
