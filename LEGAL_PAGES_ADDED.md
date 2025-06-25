@@ -1,3 +1,8 @@
+<!--
+NOTE: The production deployment URL is managed in deployment_config.json.
+Update that file to change the deployment URL everywhere.
+-->
+
 # Legal Pages Added
 
 This document confirms the creation and integration of the Privacy Policy and Terms of Service pages into the PrettyMail application.
@@ -24,5 +29,5 @@ This document confirms the creation and integration of the Privacy Policy and Te
     vercel --prod
     ```
 3.  Update the Google Cloud Console with the new URLs:
-    -   **Application privacy policy link:** `https://prettymail-production.vercel.app/privacy`
-    -   **Application terms of service link:** `https://prettymail-production.vercel.app/terms`
+    -   **Application privacy policy link:** `<DEPLOYMENT_URL>/privacy`
+    -   **Application terms of service link:** `<DEPLOYMENT_URL>/terms`

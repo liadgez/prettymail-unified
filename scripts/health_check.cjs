@@ -1,8 +1,14 @@
 #!/usr/bin/env node
 
 const https = require('https');
+const fs = require('fs');
+const path = require('path');
 
-const APP_URL = 'https://prettymail-production.vercel.app';
+// Read deployment URL from config
+const configPath = path.resolve(__dirname, '../deployment_config.json');
+const { DEPLOYMENT_URL } = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+
+const APP_URL = DEPLOYMENT_URL;
 
 function checkEndpoint(url) {
   return new Promise((resolve, reject) => {

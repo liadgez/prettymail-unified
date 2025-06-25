@@ -1,8 +1,13 @@
+<!--
+NOTE: The production deployment URL is managed in deployment_config.json.
+Update that file to change the deployment URL everywhere.
+-->
+
 # 🚀 PrettyMail Project - DEPLOYMENT COMPLETE
 
 ## ✅ Current Status: PRODUCTION READY
 
-**Live Application:** https://prettymail-production.vercel.app
+**Live Application:** <DEPLOYMENT_URL>
 
 ### 🎯 What's Been Accomplished:
 

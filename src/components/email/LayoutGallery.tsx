@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 
 interface Layout {
   id: string;
@@ -56,34 +55,32 @@ const LayoutGallery = ({
       )
     }
   ];
-
   const activeLayouts = layouts.length > 0 ? layouts : defaultLayouts;
 
   return (
-    <div className="border-t p-4">
+    <div className="border-t border-white/10 p-4 bg-[#232326]">
       <div className="mb-3">
-        <h3 className="text-sm font-medium">Email Layouts</h3>
-        <p className="text-xs text-muted-foreground">
+        <h3 className="text-sm font-medium text-white font-system">Email Layouts</h3>
+        <p className="text-xs text-white/60 font-system">
           Choose a style for your email
         </p>
       </div>
-      
-      <div className="flex gap-2 overflow-x-auto">
+      <div className="flex gap-3 overflow-x-auto pb-2">
         {activeLayouts.map((layout) => (
           <Button
             key={layout.id}
             variant={selectedLayout === layout.id ? "default" : "outline"}
             size="sm"
             disabled={disabled}
-            className="flex-shrink-0 h-auto p-3 flex flex-col items-center gap-2 min-w-[100px]"
+            className={`flex-shrink-0 h-auto p-3 flex flex-col items-center gap-2 min-w-[100px] rounded-lg border-2 transition-all duration-200 ${selectedLayout === layout.id ? 'border-[#0a84ff] bg-[#0a84ff]/10 shadow-apple' : 'border-white/20 hover:border-[#0a84ff]/50 hover:bg-white/5'} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} bg-[#2c2c2e]`}
             onClick={() => onLayoutSelect(layout.id)}
             onMouseEnter={() => onLayoutHover(layout.id)}
             onMouseLeave={() => onLayoutHover(null)}
           >
             {layout.thumbnail}
             <div className="text-center">
-              <div className="text-xs font-medium">{layout.name}</div>
-              <div className="text-xs text-muted-foreground">{layout.description}</div>
+              <div className="text-xs font-medium text-white font-system">{layout.name}</div>
+              <div className="text-xs text-white/60 font-system">{layout.description}</div>
             </div>
           </Button>
         ))}

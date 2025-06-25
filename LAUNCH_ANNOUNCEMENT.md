@@ -1,3 +1,8 @@
+<!--
+NOTE: The production deployment URL is managed in deployment_config.json.
+Update that file to change the deployment URL everywhere.
+-->
+
 # 🎉 PrettyMail is Live!
 
 We're excited to announce that **PrettyMail** is now live and ready for users!
@@ -17,7 +22,7 @@ PrettyMail is a modern, intuitive email composition platform that helps you crea
 
 ## 🌐 Try It Now
 
-**Live Application:** https://prettymail-production.vercel.app
+**Live Application:** <DEPLOYMENT_URL>
 
 1. Click "Sign in with Google"
 2. Start creating beautiful emails immediately

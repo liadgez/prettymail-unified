@@ -1,3 +1,8 @@
+<!--
+NOTE: The production deployment URL is managed in deployment_config.json.
+Update that file to change the deployment URL everywhere.
+-->
+
 # OAuth Consent Screen Branding Configuration
 
 Based on your screenshot, here are the fields you need to complete for your PrettyMail OAuth consent screen:
@@ -17,17 +22,15 @@ Based on your screenshot, here are the fields you need to complete for your Pret
 - **Why:** Helps users recognize your app and builds trust
 
 ### 2. **Application Home Page** (Required)
-- **What to enter:** `https://prettymail-production.vercel.app`
+- **What to enter:** `<DEPLOYMENT_URL>`
 - **Purpose:** Provides users a link to your home page
 
 ### 3. **Application Privacy Policy Link** (Required)
-- **What to enter:** You need to create a privacy policy page
-- **Suggested URL:** `https://prettymail-production.vercel.app/privacy`
+- **What to enter:** `<DEPLOYMENT_URL>/privacy`
 - **Purpose:** Required for OAuth consent screen
 
 ### 4. **Application Terms of Service Link** (Required)
-- **What to enter:** You need to create a terms of service page
-- **Suggested URL:** `https://prettymail-production.vercel.app/terms`
+- **What to enter:** `<DEPLOYMENT_URL>/terms`
 - **Purpose:** Required for OAuth consent screen
 
 ### 5. **Authorized Domains** (Required)

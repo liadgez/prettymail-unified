@@ -33,14 +33,13 @@ const ChatSidebar = ({ onQuickInsert }: ChatSidebarProps) => {
   ];
 
   return (
-    <Sidebar>
-      <SidebarHeader className="p-4">
-        <h2 className="text-lg font-semibold">Quick Start</h2>
-        <p className="text-sm text-muted-foreground">
+    <Sidebar className="w-72 bg-[#1e1e1e] border-r border-white/10">
+      <SidebarHeader className="p-6 border-b border-white/10">
+        <h2 className="text-lg font-semibold text-white font-system">Quick Start</h2>
+        <p className="text-sm text-white/60 font-system">
           Get started with email templates
         </p>
       </SidebarHeader>
-      
       <SidebarContent className="p-4">
         <ScrollArea className="h-full">
           <div className="space-y-2">
@@ -48,14 +47,14 @@ const ChatSidebar = ({ onQuickInsert }: ChatSidebarProps) => {
               <Button
                 key={index}
                 variant="ghost"
-                className="w-full justify-start h-auto p-3 flex-col items-start"
+                className="w-full justify-start h-auto p-3 flex-col items-start bg-[#232326] text-white font-system rounded-lg border border-white/10 hover:bg-[#232326]/80 transition-all"
                 onClick={() => onQuickInsert?.(item.text)}
               >
                 <div className="flex items-center gap-2 mb-1">
                   {item.icon}
-                  <span className="font-medium">{item.label}</span>
+                  <span className="font-medium text-white font-system">{item.label}</span>
                 </div>
-                <p className="text-xs text-muted-foreground text-left line-clamp-2">
+                <p className="text-xs text-white/60 text-left line-clamp-2 font-system">
                   {item.text}
                 </p>
               </Button>

@@ -1,3 +1,8 @@
+<!--
+NOTE: The production deployment URL is managed in deployment_config.json.
+Update that file to change the deployment URL everywhere.
+-->
+
 # Google Cloud Console Security Configuration
 
 Based on your Project Checkup screenshot, here are the security issues that need to be addressed for PrettyMail:

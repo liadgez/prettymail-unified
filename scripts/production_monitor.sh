@@ -15,7 +15,8 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Production URL
-PROD_URL="https://prettymail-production.vercel.app"
+CONFIG_PATH="$(dirname "$0")/../deployment_config.json"
+PROD_URL=$(node -pe "require('$CONFIG_PATH').DEPLOYMENT_URL")
 
 echo -e "${BLUE}📡 Checking production deployment...${NC}"
 
