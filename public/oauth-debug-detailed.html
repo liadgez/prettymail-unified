@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Debug - PrettyMail</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .debug-info { background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .error { background: #ffebee; border-left: 4px solid #f44336; }
+        .success { background: #e8f5e9; border-left: 4px solid #4caf50; }
+        button { background: #4285f4; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #3367d6; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔍 OAuth Debug Page</h1>
+    
+    <div class="debug-info">
+        <h3>Current Environment Info:</h3>
+        <pre id="envInfo"></pre>
+    </div>
+
+    <div class="debug-info">
+        <h3>Google OAuth Configuration:</h3>
+        <pre id="oauthConfig"></pre>
+    </div>
+
+    <button onclick="testGoogleAuth()">🔐 Test Google OAuth</button>
+    
+    <div id="results"></div>
+
+    <script>
+        // Display environment info
+        const envInfo = {
+            'Current URL': window.location.href,
+            'Protocol': window.location.protocol,
+            'Hostname': window.location.hostname,
+            'Port': window.location.port || 'default',
+            'User Agent': navigator.userAgent,
+            'Environment': 'production'
+        };
+        document.getElementById('envInfo').textContent = JSON.stringify(envInfo, null, 2);
+
+        // OAuth configuration
+        const oauthConfig = {
+            'Client ID': 'CLIENT_ID_WILL_BE_SET',
+            'Redirect URI (calculated)': window.location.origin,
+            'JavaScript Origins': window.location.origin,
+            'Using HTTPS': window.location.protocol === 'https:'
+        };
+        document.getElementById('oauthConfig').textContent = JSON.stringify(oauthConfig, null, 2);
+
+        function testGoogleAuth() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<div class="debug-info"><h3>🔄 Testing OAuth...</h3></div>';
+
+            // Try to load Google OAuth library
+            const script = document.createElement('script');
+            script.src = 'https://accounts.google.com/gsi/client';
+            script.onload = function() {
+                resultsDiv.innerHTML += '<div class="debug-info success"><h3>✅ Google OAuth library loaded successfully</h3></div>';
+                
+                // Initialize OAuth (this will help us see what's happening)
+                try {
+                    google.accounts.id.initialize({
+                        client_id: '459994616573-ak8fq5b3r0lk693tf31od0o6s4a9hpip.apps.googleusercontent.com',
+                        callback: function(response) {
+                            resultsDiv.innerHTML += '<div class="debug-info success"><h3>✅ OAuth Success!</h3><pre>' + JSON.stringify(response, null, 2) + '</pre></div>';
+                        },
+                        error_callback: function(error) {
+                            resultsDiv.innerHTML += '<div class="debug-info error"><h3>❌ OAuth Error:</h3><pre>' + JSON.stringify(error, null, 2) + '</pre></div>';
+                        }
+                    });
+
+                    google.accounts.id.renderButton(
+                        document.getElementById('results'),
+                        { theme: 'outline', size: 'large' }
+                    );
+                    
+                    resultsDiv.innerHTML += '<div class="debug-info"><h3>📝 OAuth button rendered - try clicking it</h3></div>';
+                } catch (error) {
+                    resultsDiv.innerHTML += '<div class="debug-info error"><h3>❌ Error initializing OAuth:</h3><pre>' + error.toString() + '</pre></div>';
+                }
+            };
+            script.onerror = function() {
+                resultsDiv.innerHTML += '<div class="debug-info error"><h3>❌ Failed to load Google OAuth library</h3></div>';
+            };
+            document.head.appendChild(script);
+        }
+
+        // Automatically run test when page loads
+        window.addEventListener('load', function() {
+            setTimeout(testGoogleAuth, 1000);
+        });
+    </script>
+
+    <hr>
+    <h3>📋 Google Cloud Console Requirements:</h3>
+    <div class="debug-info">
+        <p><strong>For popup mode (recommended):</strong></p>
+        <ul>
+            <li><strong>Authorized JavaScript Origins:</strong> <code>https://prettymail-production.vercel.app</code></li>
+            <li><strong>Authorized Redirect URIs:</strong> <em>Leave empty or remove all entries</em></li>
+        </ul>
+        
+        <p><strong>Client ID should be:</strong> <code>459994616573-ak8fq5b3r0lk693tf31od0o6s4a9hpip.apps.googleusercontent.com</code></p>
+    </div>
+</body>
+</html>
