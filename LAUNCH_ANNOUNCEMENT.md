@@ -17,7 +17,7 @@ PrettyMail is a modern, intuitive email composition platform that helps you crea
 
 ## 🌐 Try It Now
 
-**Live Application:** https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+**Live Application:** https://prettymail-production.vercel.app
 
 1. Click "Sign in with Google"
 2. Start creating beautiful emails immediately
@@ -53,6 +53,6 @@ We're continuously working to improve PrettyMail. Coming soon:
 
 **Ready to transform your email experience?** 
 
-👉 **Start using PrettyMail today:** https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+👉 **Start using PrettyMail today:** https://prettymail-production.vercel.app
 
 #PrettyMail #EmailMarketing #Productivity #WebApp #React #TypeScript

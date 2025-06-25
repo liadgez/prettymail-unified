@@ -17,21 +17,21 @@ Based on your screenshot, here are the fields you need to complete for your Pret
 - **Why:** Helps users recognize your app and builds trust
 
 ### 2. **Application Home Page** (Required)
-- **What to enter:** `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app`
+- **What to enter:** `https://prettymail-production.vercel.app`
 - **Purpose:** Provides users a link to your home page
 
 ### 3. **Application Privacy Policy Link** (Required)
 - **What to enter:** You need to create a privacy policy page
-- **Suggested URL:** `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app/privacy`
+- **Suggested URL:** `https://prettymail-production.vercel.app/privacy`
 - **Purpose:** Required for OAuth consent screen
 
 ### 4. **Application Terms of Service Link** (Required)
 - **What to enter:** You need to create a terms of service page
-- **Suggested URL:** `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app/terms`
+- **Suggested URL:** `https://prettymail-production.vercel.app/terms`
 - **Purpose:** Required for OAuth consent screen
 
 ### 5. **Authorized Domains** (Required)
-- **What to add:** `prettymail-df2gr92a4-liad-gezs-projects.vercel.app`
+- **What to add:** `prettymail-production.vercel.app`
 - **Purpose:** Tells Google which domains are authorized to use this OAuth client
 
 ---
@@ -40,14 +40,14 @@ Based on your screenshot, here are the fields you need to complete for your Pret
 
 ### Step 1: Fill in the Required URLs
 ```
-Application home page: https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
-Application privacy policy: https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app/privacy
-Application terms of service: https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app/terms
+Application home page: https://prettymail-production.vercel.app
+Application privacy policy: https://prettymail-production.vercel.app/privacy
+Application terms of service: https://prettymail-production.vercel.app/terms
 ```
 
 ### Step 2: Add Authorized Domain
 ```
-Authorized domains: prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+Authorized domains: prettymail-production.vercel.app
 ```
 
 ### Step 3: Create Privacy Policy and Terms Pages

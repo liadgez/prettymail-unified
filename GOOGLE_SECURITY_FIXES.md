@@ -99,7 +99,7 @@ Based on your Project Checkup screenshot, here are the security issues that need
 
 ### Step 4: Test Configuration
 1. Deploy any changes to Vercel
-2. Test the OAuth flow: https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+2. Test the OAuth flow: https://prettymail-production.vercel.app
 3. Verify no security warnings appear
 
 Once these security issues are resolved, your PrettyMail application will be properly secured and ready for production use.

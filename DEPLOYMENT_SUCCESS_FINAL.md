@@ -2,7 +2,7 @@
 
 ## ✅ Deployment Status: LIVE
 
-**Production URL:** https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+**Production URL:** https://prettymail-production.vercel.app
 
 The application has been successfully deployed and is now live! The build issues have been resolved and the site is responding correctly.
 
@@ -25,11 +25,11 @@ To complete the setup and enable Google login, you need to update your Google Cl
 3. **Update the URLs:**
    - **Authorized JavaScript Origins:** 
      ```
-     https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+     https://prettymail-production.vercel.app
      ```
    - **Authorized Redirect URIs:**
      ```
-     https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+     https://prettymail-production.vercel.app
      ```
 
 4. **Save the changes** and wait 5-10 minutes for propagation
@@ -41,7 +41,7 @@ To complete the setup and enable Google login, you need to update your Google Cl
 Once you've updated the Google Cloud Console:
 
 1. **Open a new incognito browser window**
-2. **Go to:** https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+2. **Go to:** https://prettymail-production.vercel.app
 3. **Click "Sign in with Google"**
 4. **Complete the login process**
 

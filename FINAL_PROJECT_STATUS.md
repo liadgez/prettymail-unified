@@ -2,7 +2,7 @@
 
 ## ✅ Current Status: PRODUCTION READY
 
-**Live Application:** https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+**Live Application:** https://prettymail-production.vercel.app
 
 ### 🎯 What's Been Accomplished:
 
@@ -27,12 +27,12 @@ The application is live and ready, but you need to complete the OAuth setup:
    - Find your "PrettyMail" OAuth client
 
 2. **Update the URLs with the new production URL:**
-   - **Authorized JavaScript Origins:** `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app`
-   - **Authorized Redirect URIs:** `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app`
+   - **Authorized JavaScript Origins:** `https://prettymail-production.vercel.app`
+   - **Authorized Redirect URIs:** `https://prettymail-production.vercel.app`
 
 3. **Save and wait 5-10 minutes** for changes to propagate
 
-4. **Test the login** at: https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app
+4. **Test the login** at: https://prettymail-production.vercel.app
 
 ---
 

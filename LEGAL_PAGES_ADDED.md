@@ -24,5 +24,5 @@ This document confirms the creation and integration of the Privacy Policy and Te
     vercel --prod
     ```
 3.  Update the Google Cloud Console with the new URLs:
-    -   **Application privacy policy link:** `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app/privacy`
-    -   **Application terms of service link:** `https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app/terms`
+    -   **Application privacy policy link:** `https://prettymail-production.vercel.app/privacy`
+    -   **Application terms of service link:** `https://prettymail-production.vercel.app/terms`

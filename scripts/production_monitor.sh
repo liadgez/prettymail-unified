@@ -15,7 +15,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Production URL
-PROD_URL="https://prettymail-df2gr92a4-liad-gezs-projects.vercel.app"
+PROD_URL="https://prettymail-production.vercel.app"
 
 echo -e "${BLUE}📡 Checking production deployment...${NC}"
 
