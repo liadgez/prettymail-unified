@@ -15,7 +15,7 @@
     "pre-deploy": "node scripts/pre_deploy_check.js",
     "qa": "node scripts/qa_check.js",
     "type-check": "tsc --noEmit",
-    "health-check": "node scripts/health_check.js"
+    "health-check": "node scripts/health_check.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
