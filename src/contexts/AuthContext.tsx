@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google';
 import { toast } from 'sonner';
+import { getOAuthRedirectURI, validateHTTPS, enforceHTTPS } from '@/lib/oauth-utils';
 
 interface User {
   id: string;
@@ -23,6 +24,14 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Enforce HTTPS in production
+  useEffect(() => {
+    enforceHTTPS();
+    if (!validateHTTPS()) {
+      toast.error('OAuth requires HTTPS in production. Redirecting...');
+    }
+  }, []);
 
   const signIn = useGoogleLogin({
     onSuccess: async (response) => {
@@ -69,6 +78,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setIsLoading(false);
     },
     scope: 'https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+    redirect_uri: getOAuthRedirectURI(),
+    ux_mode: 'popup',
   });
 
   const signOut = () => {

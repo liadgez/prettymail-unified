@@ -11,7 +11,11 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || ""}>
+  <GoogleOAuthProvider 
+    clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID || ""}
+    onScriptLoadError={() => console.error("Google OAuth script failed to load")}
+    onScriptLoadSuccess={() => console.log("Google OAuth script loaded successfully")}
+  >
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>

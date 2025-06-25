@@ -2,14 +2,15 @@
 
 ## ❌ **Current Error**
 ```
-Access blocked: Authorization Error
-admin@terrific.co.il  
-The OAuth client was not found.
+The redirect uri your app is sending is HTTP not HTTPS
+Production apps must run HTTPS
 Error 401: invalid_client
 ```
 
 ## 🎯 **Root Cause**
-The Google Client ID is set in Vercel but **NOT properly configured in Google Cloud Console**.
+1. OAuth redirect URI is using HTTP instead of HTTPS
+2. Google Cloud Console may not have the correct HTTPS redirect URI configured
+3. Production apps must use HTTPS for OAuth security
 
 ## 🔧 **Step-by-Step Fix**
 
@@ -48,13 +49,13 @@ The Google Client ID is set in Vercel but **NOT properly configured in Google Cl
 
 5. **Authorized JavaScript origins:**
    ```
-   https://prettymail-7w61n9ccp-liad-gezs-projects.vercel.app
+   https://prettymail-gktwh0gt5-liad-gezs-projects.vercel.app
    http://localhost:8080
    ```
 
 6. **Authorized redirect URIs:**
    ```
-   https://prettymail-7w61n9ccp-liad-gezs-projects.vercel.app
+   https://prettymail-gktwh0gt5-liad-gezs-projects.vercel.app
    http://localhost:8080
    ```
 
@@ -75,15 +76,20 @@ vercel --prod
 
 ## ⚠️ **Common Issues**
 
-### Issue 1: Wrong Domain
-- **Error:** `redirect_uri_mismatch`
-- **Fix:** Ensure URL in Google Cloud exactly matches: `https://prettymail-7w61n9ccp-liad-gezs-projects.vercel.app`
+### Issue 1: HTTP instead of HTTPS
+- **Error:** `The redirect uri your app is sending is HTTP not HTTPS`
+- **Fix:** Ensure all URLs in Google Cloud Console use HTTPS
+- **Fix:** App now automatically enforces HTTPS in production
 
-### Issue 2: Missing APIs
+### Issue 2: Wrong Domain
+- **Error:** `redirect_uri_mismatch`
+- **Fix:** Ensure URL in Google Cloud exactly matches: `https://prettymail-gktwh0gt5-liad-gezs-projects.vercel.app`
+
+### Issue 3: Missing APIs
 - **Error:** `invalid_client`
 - **Fix:** Enable Gmail API, Google+ API, and People API
 
-### Issue 3: Consent Screen Not Published
+### Issue 4: Consent Screen Not Published
 - **Error:** `access_blocked`
 - **Fix:** Save and potentially publish the OAuth consent screen
 
