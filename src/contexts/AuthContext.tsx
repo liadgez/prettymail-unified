@@ -75,7 +75,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     },
     onError: (error) => {
       console.error('Google login error:', error);
-      toast.error('Login failed. Please try again.');
+      // Only show OAuth errors in production or if it's a real OAuth issue
+      if (import.meta.env.PROD || !String(error).includes('Invalid client_id')) {
+        toast.error('Login failed. Please try again.');
+      } else {
+        console.warn('OAuth not configured for localhost. Use production URL for testing.');
+      }
       setIsLoading(false);
     },
     scope: 'https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
